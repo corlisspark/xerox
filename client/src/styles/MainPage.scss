@@ -1,0 +1,42 @@
+.main-page__outer {
+    display: flex;
+}
+
+.main-menu {
+    height: 50vh;
+    font-family: $primary-font;
+    margin-top: 62px;
+    border-radius: 0 2px 2px 0;
+
+    &__caption {
+        margin: 0;
+        padding: 3px 16px;
+        text-transform: uppercase;
+        letter-spacing: 0.7px;
+        font-size: 12px;
+        color: $menu-caption-gray;
+        font-weight: 600;
+    }
+
+    &__categories-list {
+        margin-top: 0;
+        padding-left: 16px;
+        font-size: 15px;
+
+        &__item {
+            margin: 5px 0;
+        }
+    }
+
+    a {
+        color: $menu-link-gray;
+    }
+}
+
+.recent-posts-list {
+    margin-top: 40px;
+
+    .recent-posts-list__caption {
+        padding: 14px 16px 10px 16px;
+    }
+}

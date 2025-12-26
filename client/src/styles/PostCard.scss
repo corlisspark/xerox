@@ -1,0 +1,49 @@
+.post-card {
+  overflow: hidden;
+  background: white;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  position: relative;
+
+  img {
+    height: 200px;
+    width: 100%;
+    object-fit: cover;
+  }
+
+  h2 {
+    font-weight: bold;
+    margin: 0;
+    font-size: 14px;
+  }
+
+  p {
+    font-size: 12px;
+    opacity: .7;
+    margin: 0;
+  }
+
+  .post-card-infos {
+    padding: 10px 12px;
+
+    &--secondary {
+      display: flex;
+      justify-content: space-between;
+      color: $dark-gray;
+      margin-top: 4px;
+    }
+
+    h2 {
+        color: $almost-black-gray;
+        font-weight: 500;
+    }
+  }
+
+  .fa-heart, .fa-heart-o {
+    position: absolute;
+    top: 12px;
+    right: 12px;
+    opacity: 0.75;
+    color: $amazon;
+    font-size: 20px;
+  }
+}
