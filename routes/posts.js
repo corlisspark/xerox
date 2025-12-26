@@ -28,17 +28,33 @@ router.get('/', function (req, res) {
 });
 
 router.post('/', async (req, res) => {
-    console.log(req.body.price);
-    const neighborhood = await db.Neighborhood.findOne({ name: req.body.location });
-    const price = req.body.price || 0; // if price is not given set it to 0
-
-    db.Post.create({ ...req.body, neighborhood: neighborhood._id, price: price })
-        .then(function (newPost) {
-            res.status(201).json(newPost);
-        })
-        .catch(function (err) {
-            res.send(err);
-        })
+    try {
+        console.log('Creating post with data:', req.body);
+        
+        const neighborhood = await db.Neighborhood.findOne({ name: req.body.location });
+        console.log('Found neighborhood:', neighborhood);
+        
+        if (!neighborhood) {
+            return res.status(400).json({ 
+                error: `Neighborhood '${req.body.location}' not found. Available neighborhoods need to be seeded.` 
+            });
+        }
+        
+        const price = req.body.price || 0;
+        
+        const newPost = await db.Post.create({ 
+            ...req.body, 
+            neighborhood: neighborhood._id, 
+            price: price 
+        });
+        
+        console.log('Created post:', newPost);
+        res.status(201).json(newPost);
+        
+    } catch (err) {
+        console.error('Error creating post:', err);
+        res.status(500).json({ error: err.message, details: err });
+    }
 });
 
 router.get('/:postId', async (req, res) => {
