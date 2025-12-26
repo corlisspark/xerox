@@ -1,39 +1,52 @@
+# Xerox - Craigslist Clone
 
-# Craigslist Clone
 An MVP Craigslist clone that allows users to view items on sale, post new items and add them to their favorites (using localStorage).
 
-See the website [here](https://craigslist-clone-mern.herokuapp.com/).
+## 🚀 Live Demo
+Coming soon - deploying to custom domain!
 
-### Technology used
-#### Frontend
-- React 
+## 🛠️ Technology Stack
+
+### Frontend
+- React 16.8.6
 - React Router
 - SCSS
-- GoogleMaps API
+- Google Maps API
+- React Carousel
 
-#### Backend
-- NodeJS
-- Express
-- MongoDB
-- Cloudinary
+### Backend
+- Node.js & Express
+- MongoDB & Mongoose
+- Cloudinary (Image hosting)
+- CORS enabled
 
-### How to run
-```
+## ⚡ Quick Start
+
+```bash
+# Install backend dependencies
 npm install
+
+# Install frontend dependencies
+cd client && npm install
+
+# Start development server
 npm start
 ```
 
-### Functional specifications
-- User can add new item
-    - Add multiple images (hosted on Cloudinary)
-    - Choose a neighborhood
-    - Select condition, category, if delivery is possible
-    - Add title, price, email, and description
-- User can add a post to their likes list (keeps a record of likes between sessions with localStorage)
-- User can see listed items, see a map where the seller is located
-- User can select categories
+## ✨ Features
+- 📝 Post new items with multiple image uploads
+- 🏘️ Neighborhood-based listings
+- ❤️ Favorites system with localStorage persistence
+- 🗺️ Google Maps integration for seller locations
+- 🔍 Category-based filtering
+- 📱 Responsive design
+- 🧪 Cypress E2E testing
 
-### Todo
-- React Context
+## 🚀 Deployment
+Configured for Railway, Heroku, and other cloud platforms with automatic builds.
+
+## 📝 Todo
+- React Context implementation
 - Advanced search filters (by price, neighborhood, etc.)
 - Pagination
+- User authentication
