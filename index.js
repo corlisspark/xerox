@@ -1,4 +1,4 @@
-require("dotenv").config({ path: "variables.env" });
+require("dotenv").config();
 
 const express = require("express");
 const app = express();
